@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Added to stack the heading and calculator vertically */
+    background: linear-gradient(45deg, #0f2027, #2c5364, #203a43);
+    background-size: 300% 300%;
+    animation: gradientFlow 8s infinite;
+    color: #ffffff;
+  }
+  
+  /* Background Animation */
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Heading Styles */
+  .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+  }
+  
+  /* Calculator Container */
+  .calculator {
+    z-index: 1;
+    width: 360px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .calculator:hover {
+    transform: translateY(-10px) scale(1.05);
+  }
+  
+  /* Display Styles */
+  .display {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    font-size: 2rem;
+    color: #f8f8f8;
+    text-align: right;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  /* Button Grid */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  /* Buttons */
+  .btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.4);
+    color: #000000;
+  }
+  
+  /* Operator Buttons */
+  .operator {
+    background: rgba(255, 69, 58, 0.8);
+    color: #ffffff;
+  }
+  
+  .operator:hover {
+    background: rgba(255, 69, 58, 1);
+    color: #ffffff;
+  }
+  
+  /* Equals Button */
+  .equals {
+    grid-column: span 2;
+    background: rgba(10, 132, 255, 0.9);
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .equals:hover {
+    background: rgba(10, 132, 255, 1);
+    transform: scale(1.15);
+  }
+  
+  /* Subtle Floating Animation for Calculator */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  .calculator {
+    animation: float 6s ease-in-out infinite;
+  }
+  
